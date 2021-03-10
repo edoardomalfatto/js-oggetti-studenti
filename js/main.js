@@ -51,13 +51,18 @@ $(function() {
 
     $("#ancora").click(function() {
         function AddNuovoUtente() {
-            nuovoUtente.nome = prompt("inserisci il nome");
-            nuovoUtente.cognome = prompt("inserisci il cognome");
-            nuovoUtente.età = parseInt(prompt("Inserisci la tua età"));
+
+            while (nuovoUtente.nome == "" || nuovoUtente.cognome == "" || nuovoUtente.età == "") {
+                nuovoUtente.nome = prompt("inserisci il nome");
+                nuovoUtente.cognome = prompt("inserisci il cognome");
+                nuovoUtente.età = parseInt(prompt("Inserisci la tua età"));
+            }
+
+            insiemeStudenti.push(nuovoUtente);
         };
         AddNuovoUtente();
-        insiemeStudenti.push(nuovoUtente);
-        console.log(nuovoUtente);
-        console.log(insiemeStudenti);
-    })
+    });
+
+    console.log(nuovoUtente);
+    console.log(insiemeStudenti);
 });

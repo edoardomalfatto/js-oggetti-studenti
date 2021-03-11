@@ -51,12 +51,15 @@ $(function() {
 
     $("#ancora").click(function() {
         function AddNuovoUtente() {
-
-            while (nuovoUtente.nome == "" || nuovoUtente.cognome == "" || nuovoUtente.età == "") {
+            do {
                 nuovoUtente.nome = prompt("inserisci il nome");
+            } while (nuovoUtente.nome == "");
+            do {
                 nuovoUtente.cognome = prompt("inserisci il cognome");
+            } while (nuovoUtente.cognome == "");
+            do {
                 nuovoUtente.età = parseInt(prompt("Inserisci la tua età"));
-            }
+            } while ((isNaN(nuovoUtente.età) == true) || nuovoUtente.età == "");
 
             insiemeStudenti.push(nuovoUtente);
         };

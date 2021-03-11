@@ -53,12 +53,21 @@ $(function() {
         function AddNuovoUtente() {
             do {
                 nuovoUtente.nome = prompt("inserisci il nome");
+                if (nuovoUtente.nome == "" || (isNaN(nuovoUtente.nome) == false)) {
+                    alert("ATTENZIONE: reinserisci il dato");
+                }
             } while (nuovoUtente.nome == "" || (isNaN(nuovoUtente.nome) == false));
             do {
                 nuovoUtente.cognome = prompt("inserisci il cognome");
+                if (nuovoUtente.cognome == "" || (isNaN(nuovoUtente.cognome) == false)) {
+                    alert("ATTENZIONE: reinserisci il dato");
+                }
             } while (nuovoUtente.cognome == "" || (isNaN(nuovoUtente.cognome) == false));
             do {
                 nuovoUtente.età = parseInt(prompt("Inserisci la tua età"));
+                if ((isNaN(nuovoUtente.età) == true) || nuovoUtente.età == "") {
+                    alert("ATTENZIONE: reinserisci il dato");
+                }
             } while ((isNaN(nuovoUtente.età) == true) || nuovoUtente.età == "");
 
             insiemeStudenti.push(nuovoUtente);

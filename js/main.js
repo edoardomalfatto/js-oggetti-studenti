@@ -53,10 +53,10 @@ $(function() {
         function AddNuovoUtente() {
             do {
                 nuovoUtente.nome = prompt("inserisci il nome");
-            } while (nuovoUtente.nome == "");
+            } while (nuovoUtente.nome == "" || (isNaN(nuovoUtente.nome) == false));
             do {
                 nuovoUtente.cognome = prompt("inserisci il cognome");
-            } while (nuovoUtente.cognome == "");
+            } while (nuovoUtente.cognome == "" || (isNaN(nuovoUtente.cognome) == false));
             do {
                 nuovoUtente.età = parseInt(prompt("Inserisci la tua età"));
             } while ((isNaN(nuovoUtente.età) == true) || nuovoUtente.età == "");
